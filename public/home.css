@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    background: rgba(30, 30, 30, 0.9);
+    color: white;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00d1ff; /* Change color on hover */
+}
+
+.section {
+    padding: 60px 20px;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+.home {
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.8), rgba(240, 240, 240, 0.8)), url('images/home-bg.jpg') no-repeat center center/cover;
+    color: #333;
+}
+
+.whiteboard {
+    background: rgba(240, 240, 240, 0.9);
+}
+
+.about {
+    background: rgba(220, 220, 220, 0.9);
+}
+
+.contact {
+    background: rgba(200, 200, 200, 0.9);
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(30, 30, 30, 0.9);
+    color: white;
+}

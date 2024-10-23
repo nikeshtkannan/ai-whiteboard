@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Whiteboard</title>
+    
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-core"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-converter"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/handpose"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-webgl"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-wasm"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/handpose"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="toolbar">
+        <button id="draw">Draw</button>
+        <button id="erase">Erase</button>
+        <input type="color" id="colorPicker" value="#000000">
+        <button id="clear">Clear</button>
+    </div>
+    <video id="webcam" width="320" height="240" autoplay></video>
+    <canvas id="whiteboard"></canvas>
+    <input type="color" id="colorPicker">
+    <button id="erase">Erase</button>
+    <button id="draw">Draw</button>
+    <button id="clear">Clear</button>
+    <script src="script.js"></script>
+
+
+    
+
+</body>
+</html>

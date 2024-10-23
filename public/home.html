@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Virtual Whiteboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">AI Whiteboard</h1>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#whiteboard">Whiteboard</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li id="login-link" style="font-size: large; font-weight: bold;"><a href="/login">Login</a></li> <!-- Login Link -->
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="section home">
+        <h2>Welcome to Your AI Virtual Whiteboard!</h2>
+        <p>Collaborate in real-time with your team, brainstorm ideas, and visualize your thoughts effortlessly.</p>
+    </section>
+
+    <section id="whiteboard" class="section whiteboard">
+        <h2>About the Whiteboard</h2>
+        <button><a href="http://localhost:3000/whiteboard.html">Test Me!</a></button>
+        <p>Our virtual whiteboard offers a seamless drawing experience with advanced features like hand tracking, shape recognition, and more. Perfect for educators, designers, and teams looking to innovate together.</p>
+    </section>
+
+    <section id="about" class="section about">
+        <h2>About Us</h2>
+        <p>We are a dedicated team focused on enhancing collaboration and creativity through technology. Our AI-powered tools aim to simplify the way people communicate and share ideas.</p>
+    </section>
+
+    <section id="contact" class="section contact">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or feedback, feel free to reach out! You can contact us at: <a href="mailto:nikesht456@gmail.com">nikesht456@gmail.com</a>.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 AI Virtual Whiteboard. All rights reserved.</p>
+    </footer>
+
+
+
+
+    // login and logout function 
+    <script>
+        //Check if the user is logged in by checking localStorage (or sessionStorage)
+        document.addEventListener("DOMContentLoaded", function() {
+            const loginLink = document.getElementById("login-link");
+
+            // Assuming login status is saved in localStorage with the key "loggedIn"
+            const loggedIn = localStorage.getItem("loggedIn");
+
+            if (loggedIn === "true") {
+                // If the user is logged in, hide the login link
+                loginLink.style.display = "none";
+
+                // Optionally add a Logout link in its place
+                const logoutLink = document.createElement("li");
+                logoutLink.innerHTML = '<a href="#" id="logout-btn">Logout</a>';
+                document.getElementById("nav-links").appendChild(logoutLink);
+
+                // Add logout functionality
+                document.getElementById("logout-btn").addEventListener("click", function() {
+                    // Clear login status from localStorage
+                    localStorage.removeItem("loggedIn");
+
+                    // Redirect to home page after logout
+                    window.location.reload();
+                });
+            }
+        });
+
+        // Simulate login success (this will be handled by your actual login logic)
+        // localStorage.setItem("loggedIn", "true"); // Call this after successful login
+    </script>
+</body>
+</html>
