@@ -7,79 +7,168 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="home.css">
 </head>
-<body>
-    <nav class="navbar">
-        <div class="container">
-            <h1 class="logo">AI Whiteboard</h1>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#whiteboard">Whiteboard</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li id="login-link" style="font-size: large; font-weight: bold;"><a href="/login">Login</a></li> <!-- Login Link -->
-            </ul>
+<body class="body" style="overflow-x: hidden;">
+    <div class="main">
+        <div class="head">
+            <div class="left">
+               <a href="Home.html" style="text-decoration: none;color:white;"><h1>AI VIRTUAL WHITEBOARD</h1></a> 
+            </div>
+            <div class="right">
+                <table class="table" id="nav-links">
+                    <td class="text">
+                        
+                        <th><a href="#Home" style="text-decoration: none;color: white;">Home</a></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th><a href="#whiteboard" style="text-decoration: none;color: white;">Whiteboard</a></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th><a href="#about" style="text-decoration: none;color: white;">About Us</a></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th><a href="#Contact" style="text-decoration: none;color: white;">Contact</a></th>
+                    </td>
+                    <td>
+                        &nbsp;
+                        &nbsp;
+                        &nbsp;
+                        &nbsp;
+                      
+                        
+
+
+                        <th id="login-link" style="font-size: 20px;"><a href="/login" style="color: rgb(145, 210, 242);text-decoration: none;">Login</a></th>
+                    </td>
+                </table>
+                
+            </div>
         </div>
-    </nav>
+        <div class="home" id="">
+            <img class="main_img" src="images/Designer.png" alt="something went wrong!!!">
 
-    <section id="home" class="section home">
-        <h2>Welcome to Your AI Virtual Whiteboard!</h2>
-        <p>Collaborate in real-time with your team, brainstorm ideas, and visualize your thoughts effortlessly.</p>
-    </section>
+            <div class="new-section" id="Home">
+                <img src="images/pic.webp" alt="something went wrong!!!" class="pic">
+                <div class="wlcm">
+                    <h2 class="wlcm1">Welcome to AI Virtual Whiteboard</h2><br>
+                    <p class="wlcm2"> Where imagination meets intelligence! Dive into a futuristic realm where ideas come alive, innovation takes flight, and every click unlocks the magic of AI. Let's reshape creativity, one smart stroke at a time!"</p>
+                </div>
+            </div>
+            <div class="whiteboard" id="whiteboard">
+                <img src="images/whiteboard.webp" alt="Something went wrong!!!" class="white_pic">
+                <div class="feature">
+                    <h3 style="font-size: 30px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;  text-shadow: 2px 2px 5px rgb(220, 152, 79);">Ai Virtual Whiteboard</h3><br>
+                    <p style="font-size:25px;font-weight:bold;font-family:'Times New Roman', Times, serif">Features</p>
+                    <br>
+                    <ul>
+                        <p style="font-weight: bolder;font-family:'Courier New', Courier, monospace">Hand Gesture Recognition</p><br>
 
-    <section id="whiteboard" class="section whiteboard">
-        <h2>About the Whiteboard</h2>
-        <button><a href="http://localhost:3000/whiteboard.html">Test Me!</a></button>
-        <p>Our virtual whiteboard offers a seamless drawing experience with advanced features like hand tracking, shape recognition, and more. Perfect for educators, designers, and teams looking to innovate together.</p>
-    </section>
+                        <li style="font-weight: lighter;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Uses TensorFlow.js to detect and interpret finger gestures via a webcam.</li><br>
+                        <p style="font-weight: bolder;font-family:'Courier New', Courier, monospace">Real-Time Collaboration</p><br>
+                        <li style="font-weight: lighter;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Employs WebSockets to synchronize actions across multiple users in real time</li><br>
+                        <p style="font-weight: bolder;font-family:'Courier New', Courier, monospace">Persistent Drawing Storage</p><br>
+                        <li style="font-weight: lighter;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Integrates with MongoDB to save user-created drawings.</li><br>
+                        <p style="font-weight: bolder;font-family:'Courier New', Courier, monospace">Hand Skeleton Visualization</p><br>
+                        <li style="font-weight: lighter;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Displays a live visualization of detected hand skeletons for precise interaction.</li><br>
+                        <p style="font-weight: bolder;font-family:'Courier New', Courier, monospace">Interactive Design</p><br>
+                        <li style="font-weight: lighter;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">A user-friendly interface with responsive CSS styling and animations.</li>
+                    </ul>
+                </div>
+                <button class="button" ><a href="http://localhost:3000/whiteboard.html" style="text-decoration: none;font-family: ;">Test Me!</a></button>
 
-    <section id="about" class="section about">
-        <h2>About Us</h2>
-        <p>We are a dedicated team focused on enhancing collaboration and creativity through technology. Our AI-powered tools aim to simplify the way people communicate and share ideas.</p>
-    </section>
+            </div>
+            <div class="about" id="about">
+                <img src="images/about.webp" alt="something went wrong!!!" class="about_pic">
+                <div class="details">
+                    <h3 style="font-size: 30px;font-family:Verdana, Geneva, Tahoma, sans-serif;  text-shadow: 2px 2px 6px rgb(104, 55, 55);">About Us</h3><br>
+                    <p style="font-size: large;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                        <b>Welcome to AI Virtual Whiteboard </b>– a revolutionary tool designed to transform creative collaboration with cutting-edge AI technology.<br><br>
+                        Our mission is to simplify and innovate the way people sketch, interact, and collaborate in real time. By integrating advanced hand gesture recognition, persistent drawing storage, and real-time synchronization, we empower users to unleash their creativity effortlessly.<br>
+                        Inspired by the challenges of remote collaboration, we envisioned a solution that combines AI, gesture-based control, and intuitive design to deliver an engaging experience.<br><br>
+                        As we continue to evolve, we aim to introduce new features and redefine the boundaries of AI-powered tools. Thank you for joining us on this exciting journey!</p>
+                </div>
+                <div class="team">
+                    
+                    <h3 style="font-size: 30px;font-family:Verdana, Geneva, Tahoma, sans-serif;  text-shadow: 2px 2px 6px rgb(104, 55, 55);">Our Team</h3><br>
+                    <p style="font-size: large;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">We are a group of passionate innovators, studying in Diploma in Computer Engineering. Our diverse backgrounds in software development, Website designing, and user experience design allow us to create tools that inspire creativity and collaboration.<br><br>
+                        From brainstorming the concept to coding every feature, our team thrives on solving challenges and pushing the boundaries of what’s possible. We believe in the power of technology to connect people, and the AI Virtual Whiteboard is our way of making that vision a reality.<br><br>
+                        Together, we’re committed to building intuitive, impactful tools that redefine the way we interact and create.</p>
+                        <img src="images/team.avif" alt="Something went wrong!!!" class="team_pic">
+                </div>
+            </div>
+            <footer class="footer">
+    <div class="waves">
+      <div class="wave" id="wave1"></div>
+      <div class="wave" id="wave2"></div>
+      <div class="wave" id="wave3"></div>
+      <div class="wave" id="wave4"></div>
+    </div>
+    <ul class="social-icon">
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="https://x.com/NikeshT129453">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="https://www.linkedin.com/in/nikesh-t-51b4b7287/">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="https://www.instagram.com/nikesht_/?__pwa=1">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a></li>
+    </ul>
+    <ul class="menu">
+      <li class="menu__item"><a class="menu__link" href="#" id="Home">Home</a></li>
+      <li class="menu__item"><a class="menu__link" href="#" id="whiteboard">Whiteboard</a></li>
+      <li class="menu__item"><a class="menu__link" href="#" id="about">About</a></li>
+      <li class="menu__item"><a class="menu__link" href="Contact">Contact</a></li>
 
-    <section id="contact" class="section contact">
-        <h2>Contact Us</h2>
-        <p>If you have any questions or feedback, feel free to reach out! You can contact us at: <a href="mailto:nikesht456@gmail.com">nikesht456@gmail.com</a>.</p>
-    </section>
+    </ul>
+    <p>&copy;2024 Ai Virtual Whiteboard | All Rights Reserved</p>
+  </footer>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+           
+        </div>
+      
+    </div>
 
-    <footer>
-        <p>&copy; 2024 AI Virtual Whiteboard. All rights reserved.</p>
-    </footer>
 
 
 
-
-    // login and logout function 
+    <!-- login and logout function  -->
     <script>
-        //Check if the user is logged in by checking localStorage (or sessionStorage)
         document.addEventListener("DOMContentLoaded", function() {
             const loginLink = document.getElementById("login-link");
-
-            // Assuming login status is saved in localStorage with the key "loggedIn"
+    
             const loggedIn = localStorage.getItem("loggedIn");
-
+    
             if (loggedIn === "true") {
-                // If the user is logged in, hide the login link
-                loginLink.style.display = "none";
-
-                // Optionally add a Logout link in its place
-                const logoutLink = document.createElement("li");
-                logoutLink.innerHTML = '<a href="#" id="logout-btn">Logout</a>';
-                document.getElementById("nav-links").appendChild(logoutLink);
-
-                // Add logout functionality
+                // Replace Login with Logout in the same position
+                loginLink.innerHTML = `
+                    <a href="#" id="logout-btn" style="color: rgb(145, 210, 242); text-decoration: none; font-size: 20px;">
+                        Logout
+                    </a>
+                `;
+    
+                // Add Logout functionality
                 document.getElementById("logout-btn").addEventListener("click", function() {
-                    // Clear login status from localStorage
                     localStorage.removeItem("loggedIn");
-
-                    // Redirect to home page after logout
                     window.location.reload();
                 });
             }
         });
-
-        // Simulate login success (this will be handled by your actual login logic)
-        // localStorage.setItem("loggedIn", "true"); // Call this after successful login
     </script>
+    
+    
+    
 </body>
 </html>
