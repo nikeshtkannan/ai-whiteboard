@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+}
+
+#toolbar {
+    margin-bottom: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+canvas {
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+
+video {
+    display: none; /* Hide the video feed unless needed for debugging */
+}

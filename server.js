@@ -20,8 +20,10 @@ mongoose.connect('mongodb://localhost:27017/ai_whiteboard', {
 // Define user schema
 const userSchema = new mongoose.Schema({
     username: { type: String, required: true, unique: true },
-    email: { type: String, required: true, unique: true }, // Email field added
+    email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
+    resetToken: { type: String }, // Field for storing password reset token
+    tokenExpiration: { type: Date }, // Field for storing token expiration time
 });
 
 const User = mongoose.model('User', userSchema);
@@ -113,8 +115,76 @@ io.on('connection', (socket) => {
     });
 });
 
+const crypto = require('crypto'); // For generating reset tokens
+
+// Forgot Password Endpoint
+app.post('/forgot-password', async (req, res) => {
+    const { username, email } = req.body;
+
+    // Validate input
+    if (!username || !email) {
+        return res.status(400).json({ success: false, message: 'Username and email are required.' });
+    }
+
+    try {
+        // Find the user in the database
+        const user = await User.findOne({ username, email });
+        if (!user) {
+            return res.status(404).json({ success: false, message: 'User not found.' });
+        }
+
+        // Generate a reset token and save it in the database
+        const resetToken = crypto.randomBytes(32).toString('hex');
+        user.resetToken = resetToken; // You may need to add `resetToken` to the schema
+        user.tokenExpiration = Date.now() + 3600000; // 1-hour expiration
+        await user.save();
+
+        // Generate the reset link
+        const resetLink = `http://localhost:3000/reset.html?token=${resetToken}`;
+        console.log(`Password reset link: ${resetLink}`); // Replace with email logic in production
+
+        res.status(200).json({ success: true, message: 'Password reset link sent to your email.' });
+    } catch (error) {
+        res.status(500).json({ success: false, message: 'Error processing request: ' + error.message });
+    }
+});
+
+// Reset Password Endpoint
+app.post('/reset-password', async (req, res) => {
+    const { token, password } = req.body;
+
+    // Validate input
+    if (!token || !password) {
+        return res.status(400).json({ success: false, message: 'Token and password are required.' });
+    }
+
+    try {
+        // Find user by reset token
+        const user = await User.findOne({ resetToken: token, tokenExpiration: { $gt: Date.now() } });
+        if (!user) {
+            return res.status(400).json({ success: false, message: 'Invalid or expired reset token.' });
+        }
+
+        // Hash the new password and save it
+        user.password = await bcrypt.hash(password, 10);
+        user.resetToken = undefined; // Clear the reset token
+        user.tokenExpiration = undefined; // Clear the token expiration
+        await user.save();
+
+        res.status(200).json({ success: true, message: 'Password reset successfully. You can now log in.' });
+    } catch (error) {
+        res.status(500).json({ success: false, message: 'Error resetting password: ' + error.message });
+    }
+});
+
+
+app.get('/reset', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'reset.html'));
+});
+
 // Server Listening
 const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
+
